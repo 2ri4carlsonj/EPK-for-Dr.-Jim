@@ -7,9 +7,9 @@
   <meta name="description" content="Warm, interactive acoustic piano, upright bass, and vocal performances for senior living, independent living, and memory care communities across Southeastern Wisconsin.">
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* CSS RESET & VARIABLES */
@@ -240,19 +240,6 @@
       align-items: center;
     }
 
-    .video-placeholder {
-      background-color: #0f172a;
-      border-radius: var(--radius);
-      aspect-ratio: 16 / 9;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-      text-align: center;
-      padding: 20px;
-    }
-
     .repertoire-list {
       list-style: none;
     }
@@ -281,38 +268,6 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       border: 1px solid var(--border-color);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 12px 16px;
-      font-size: 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      font-family: inherit;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
     }
 
     /* FAQ SECTION */
@@ -351,8 +306,7 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .media-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; } /* Simplified for single landing page on mobile */
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -366,179 +320,68 @@
         <li><a href="#why-us">Why Facilities Choose Us</a></li>
         <li><a href="#music">Music & Videos</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#book" class="btn btn-primary" style="padding: 8px 16px; color: white;">Check Rates</a></li>
+        <li><a href="#book" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem; margin-left: 10px;">Book Now</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-content">
-      <span class="badge">Southeastern Wisconsin Senior Entertainment</span>
-      <h1>Live Acoustic Music That Brings Joy & Connection to Your Community</h1>
-      <p>Acoustic piano, upright bass, and warm vocal harmonies performing timeless classics, folk favorites, and popular sing-alongs tailored for resident happy hours and social events.</p>
+      <span class="badge">Southeastern Wisconsin</span>
+      <h1>Live Acoustic Music Tailored for Senior Living Communities</h1>
+      <p>An interactive, uplifting blend of piano, upright bass, and timeless vocals that brings joy and sparks cherished memories for your residents.</p>
       <div class="hero-buttons">
-        <a href="#book" class="btn btn-primary">Check Availability & Pricing</a>
-        <a href="#music" class="btn btn-secondary">Watch Video Sample</a>
+        <a href="#book" class="btn btn-primary">Check Available Dates</a>
+        <a href="#music" class="btn btn-secondary">Watch Video Performance</a>
       </div>
     </div>
   </section>
 
-  <!-- WHY DIRECTORS CHOOSE US -->
+  <!-- FEATURES -->
   <section id="why-us" class="features">
     <div class="container">
       <div class="section-title">
-        <h2>Designed for Senior Living Environments</h2>
-        <p>We make live music easy, enjoyable, and completely hassle-free for Life Enrichment & Activity Directors.</p>
+        <h2>Uplifting Entertainment for Seniors</h2>
+        <p>Professional, reliable, and deeply engaged musicians who understand how to connect with your community.</p>
       </div>
-
       <div class="grid-3">
         <div class="card">
-          <div class="card-icon">🔊</div>
-          <h3>Volume-Conscious Sound</h3>
-          <p>Our acoustic piano and natural upright bass setup is engineered specifically for dining rooms, social halls, and courtyards. Music remains warm, full, and always conversation-friendly.</p>
+          <div class="card-icon">🎹</div>
+          <h3>Timeless Classics</h3>
+          <p>We feature a carefully curated setlist of recognizable jazz standards, oldies, classic pop, and holiday seasonal favorites.</p>
         </div>
-
         <div class="card">
-          <div class="card-icon">🎶</div>
-          <h3>Resident Engagement & Memory Recall</h3>
-          <p>We play recognizable hits from Johnny Cash, Credence Clearwater Revival, Neil Diamond, and Otis Redding—encouraging active participation, light dancing, clapping, and cherished memory recall.</p>
+          <div class="card-icon">🧠</div>
+          <h3>Memory Care Friendly</h3>
+          <p>Warm, dynamic interaction designed to safely stimulate mental acuity and invite residents to sing along, clap, or dance.</p>
         </div>
-
         <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>100% Turnkey & Professional</h3>
-          <p>We arrive 45 minutes early, bring our own compact sound gear, and require only a single standard 120V outlet. No technical setup or assistance needed from your staff.</p>
+          <div class="card-icon">🤝</div>
+          <h3>Highly Professional</h3>
+          <p>Punctual arrival, minimal stage footprint, and total volume management tailored to specific community room dimensions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MEDIA & REPERTOIRE -->
+  <!-- MUSIC & VIDEOS -->
   <section id="music" class="media-section">
     <div class="container">
-      <div class="media-grid">
-        <!-- Video Placeholder -->
-        <div>
-          <div class="video-placeholder">
-            <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">[ Live Performance Video Reel ]</p>
-            <p style="color: #94a3b8; font-size: 0.9rem;"><iframe width="560" height="315" src="https://youtu.be/WBvkoUgcaDE"></p>
-          </div>
-        </div>
-
-        <!-- Sample Songs -->
-        <div>
-          <span class="badge">Repertoire Preview</span>
-          <h2 style="font-size: 1.8rem; margin-bottom: 16px; color: var(--primary);">Timeless Favorites Your Residents Love</h2>
-          <p style="color: var(--text-muted); margin-bottom: 20px;">Our song selection is curated to evoke warmth, energy, and nostalgia across every cognitive level.</p>
-          
-            <li><span>Wagon Wheel</span> <strong>Old Crow Medicine Show</strong></li>
-            <li><span>Ring of Fire</span> <strong>Johnny Cash</strong></li>
-            <li><span>16 Tons</span> <strong>Tennesee Ernie Ford</strong></li>
-            <li><span>Sweet Caroline</span> <strong>Neil Diamond</strong></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING INQUIRY FORM -->
-  <section id="book" class="booking-section">
-    <div class="container">
-      <div class="booking-container">
-        <div style="text-align: center; margin-bottom: 30px;">
-          <h2 style="font-size: 2rem; color: var(--primary);">Book Jim & Rob for Your Next Event</h2>
-          <p style="color: var(--text-muted);">Fill out the brief form below to check date availability and receive our standard community rates.</p>
-        </div>
-
-        <form id="booking-form" action="#" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contact-name">Your Name *</label>
-              <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. Sarah Connor" required>
-            </div>
-            <div class="form-group">
-              <label for="facility-name">Facility / Community Name *</label>
-              <input type="text" id="facility-name" name="facility" class="form-control" placeholder="e.g. Oakridge Senior Living" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Work Email *</label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="2ri4carlsonj@gmail.com" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" class="form-control" placeholder="309-922-8098" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="event-date">Target Date or Month</label>
-              <input type="text" id="event-date" name="date" class="form-control" placeholder="e.g. October 15th or 'Sometime in Nov'">
-            </div>
-            <div class="form-group">
-              <label for="event-type">Event Type</label>
-              <select id="event-type" name="type" class="form-control">
-                <option value="happy-hour">Afternoon Social / Happy Hour</option>
-                <option value="family-day">Family Weekend Celebration</option>
-                <option value="holiday">Holiday / Seasonal Party</option>
-                <option value="other">Other Event</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="notes">Additional Details / Questions</label>
-            <textarea id="notes" name="notes" rows="3" class="form-control" placeholder="Tell us about your community or preferred event times..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry & Request Dates</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FREQUENTLY ASKED QUESTIONS -->
-  <section id="faq" class="faq-section">
-    <div class="container" style="max-width: 800px;">
       <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Music & Videos</h2>
+        <p>Listen to Jim & Rob live in action and check out our performance rotation list.</p>
       </div>
+      
+      <div class="media-grid">
+        <!-- Live Video Container Fixed for YouTube -->
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow); background-color: #0f172a;">
+          <iframe 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+            src="https://youtube.com" 
+            title="Jim & Rob Acoustic Duo Live"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
 
-      <div class="faq-item">
-        <h3>What are your space and power requirements?</h3>
-        <p>We require a small footprint of roughly 8' x 6' (10' x 6' preferred) and access to one standard 120V wall outlet within 25 feet. We provide all keyboards, upright bass, sound amplification, and cabling.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What areas do you serve?</h3>
-        <p>We perform regularly across Southeastern Wisconsin, focusing on facilities in Milwaukee, Waukesha, Jefferson, and Dane counties (the I-94 and US-18 corridor from Milwaukee to Madison).</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How long is a standard performance?</h3>
-        <p>Our standard program runs 60 minutes, which aligns perfectly with resident attention spans and facility social hours. Customized 45-minute or 90-minute sets are also available upon request.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Jim & Rob Acoustic Duo. Serving Senior Communities Across Southeastern Wisconsin.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Simple script to demonstrate form submission handling
-    document.getElementById('booking-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your inquiry! Jim & Rob will get back to you within 24 hours to confirm date availability. 309-922-8098  e-mail 2ri4carlsonj@gmail.com');
-      this.reset();
-    });
-  </script>
-</body>
-</html>
