@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jim & Rob Acoustic Duo | Live Senior Living Entertainment in Wisconsin</title>
   <meta name="description" content="Warm, interactive acoustic piano, upright bass, and vocal performances for senior living, independent living, and memory care communities across Southeastern Wisconsin.">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Fonts (FIXED: correct host is fonts.googleapis.com, not googleapis.com) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* CSS RESET & VARIABLES */
@@ -31,6 +31,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -140,6 +144,17 @@
       color: var(--primary);
     }
 
+    /* Mobile menu button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--primary);
+      line-height: 1;
+    }
+
     /* HERO SECTION */
     .hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
@@ -240,6 +255,25 @@
       align-items: center;
     }
 
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      background-color: #0f172a;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .repertoire-list {
       list-style: none;
     }
@@ -249,10 +283,17 @@
       border-bottom: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
+      gap: 16px;
     }
 
     .repertoire-list li strong {
       color: var(--primary);
+    }
+
+    .repertoire-list .tag {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
     }
 
     /* BOOKING & CONTACT FORM */
@@ -270,26 +311,96 @@
       border: 1px solid var(--border-color);
     }
 
-    /* FAQ SECTION */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--text-dark);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+      border-color: var(--primary);
+    }
+
+    /* FAQ SECTION — accordion using native <details> (no JavaScript needed) */
     .faq-section {
       background-color: #ffffff;
       padding: 80px 0;
       border-top: 1px solid var(--border-color);
     }
 
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
     .faq-item {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    .faq-item h3 {
-      font-size: 1.15rem;
+    .faq-item summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      font-size: 1.1rem;
+      font-weight: 700;
       color: var(--primary);
-      margin-bottom: 8px;
+      cursor: pointer;
+      list-style: none;
+      transition: background-color 0.2s;
     }
 
-    .faq-item p {
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--accent);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item summary:hover {
+      background-color: var(--bg-light);
+    }
+
+    .faq-item .faq-answer {
+      padding: 0 24px 20px;
       color: var(--text-muted);
     }
 
@@ -302,13 +413,41 @@
       font-size: 0.9rem;
     }
 
+    footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
     /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .media-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #ffffff;
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+        gap: 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
     }
   </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -316,7 +455,8 @@
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="logo">Jim & Rob <span>Acoustic Duo</span></a>
-      <ul class="nav-links">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#why-us">Why Facilities Choose Us</a></li>
         <li><a href="#music">Music & Videos</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -372,16 +512,179 @@
         <h2>Music & Videos</h2>
         <p>Listen to Jim & Rob live in action and check out our performance rotation list.</p>
       </div>
-      
+
       <div class="media-grid">
-        <!-- Live Video Container Fixed for YouTube -->
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow); background-color: #0f172a;">
-          <iframe 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-            src="https://youtube.com" 
+        <!-- Video embed: WBvkoUgcaDE (Jim & Rob live performance) -->
+        <div class="video-wrapper">
+          <iframe
+            id="ytVideo"
+            src="https://www.youtube.com/embed/WBvkoUgcaDE"
             title="Jim & Rob Acoustic Duo Live"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
           </iframe>
         </div>
+        <p style="margin-top: 12px;">
+          <a href="https://www.youtube.com/watch?v=WBvkoUgcaDE" target="_blank" rel="noopener"
+             style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem;">
+            ▶ Watch on YouTube
+          </a>
+        </p>
+        <!-- Repertoire ("more info") -->
+        <div>
+          <h3 style="color: var(--primary); margin-bottom: 16px;">What We Play</h3>
+          <ul class="repertoire-list">
+            <li><strong>We Can Work It Out</strong> <span class="tag">The Beatles</span></li>
+            <li><strong>16 Tons</strong> <span class="tag">Tennessee Ernie Ford</span></li>
+            <li><strong>Good Old Boys</strong> <span class="tag">Waylon Jennings</span></li>
+            <li><strong>Folsom Prison</strong> <span class="tag">Johnny Cash</span></li>
+            <li><strong>Sweet Caroline</strong> <span class="tag">Neil Diamond</span></li>
+          </ul>
+          <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.95rem;">
+            …plus many more. Resident requests are always welcome — send us a list and we'll work your favorites into the set.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- BOOKING FORM -->
+  <section id="book" class="booking-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Book Jim & Rob</h2>
+        <p>Tell us about your community and we'll get back to you with availability.</p>
+      </div>
+      <div class="booking-container">
+        <!-- Booking form submissions are sent via Formspree to your email inbox -->
+        <form action="https://formspree.io/f/xnpngylq" method="POST">
+          <input type="hidden" name="_subject" value="New booking request — Jim & Rob Acoustic Duo">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="facility">Facility / Community Name</label>
+            <input type="text" id="facility" name="facility">
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date">
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Event</label>
+            <textarea id="message" name="message" rows="5" placeholder="Number of residents, room size, occasion, favorite songs..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Request Availability</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (interactive accordion) -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Click a question below to see the answer.</p>
+      </div>
+      <div class="faq-container">
+
+        <details class="faq-item">
+          <summary>What areas do you serve?</summary>
+          <div class="faq-answer">
+            <p>We perform across Southeastern Wisconsin, including Milwaukee, Waukesha, Ozaukee, Washington, and Racine counties. We're happy to travel farther for the right community — just ask!</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long is a typical performance?</summary>
+          <div class="faq-answer">
+            <p>Most communities book us for a 60–90 minute set. We can adjust the length to fit your activity schedule, and we're flexible about breaks for resident needs.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you perform in memory care units?</summary>
+          <div class="faq-answer">
+            <p>Yes! We have extensive experience with memory care and dementia-friendly performances. We keep volumes gentle, choose highly familiar songs, and invite residents to sing along at their own pace.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does your setup require?</summary>
+          <div class="faq-answer">
+            <p>Very little. We bring our own keyboard, upright bass, and compact sound system. All we need is a standard power outlet and roughly an 8' x 8' performance space. Setup takes about 20 minutes.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can residents request songs?</summary>
+          <div class="faq-answer">
+            <p>Absolutely — requests are our favorite part! Share a song list with us ahead of time and we'll work as many favorites as we can into the set.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How far in advance should we book?</summary>
+          <div class="faq-answer">
+            <p>We recommend booking 4–6 weeks ahead, especially for holiday seasons. That said, reach out anytime — we'll do our best to accommodate last-minute dates.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p><strong style="color:#ffffff;">Jim & Rob Acoustic Duo</strong> · Live senior living entertainment in Southeastern Wisconsin</p>
+      <p style="margin-top: 8px;">Questions? <a href="#book">Book a performance</a> or <a href="#faq">read our FAQ</a>.</p>
+      <p style="margin-top: 12px; font-size: 0.8rem;">&copy; 2026 Jim & Rob Acoustic Duo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
+    });
+
+    // FAQ fallback: if <details> native toggling is unavailable, do it manually
+    if (!('open' in document.createElement('details'))) {
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const summary = item.querySelector('summary');
+        const answer = item.querySelector('.faq-answer');
+        item.open = false;
+        answer.style.display = 'none';
+        summary.addEventListener('click', e => {
+          e.preventDefault();
+          const isOpen = item.open;
+          item.open = !isOpen;
+          answer.style.display = isOpen ? 'none' : 'block';
+        });
+      });
+    }
+
+    // Close the mobile menu after tapping a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '&#9776;';
+      });
+    });
+  </script>
+
+</body>
+</html>
