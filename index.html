@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jim & Rob Acoustic Duo | Live Senior Living Entertainment in Wisconsin</title>
-  <meta name="description" content="Warm, interactive acoustic piano, upright bass, and vocal performances for senior living, independent living, and memory care communities across Southeastern Wisconsin.">
+  <title>Jim & Rob Acoustic Duo | Live Music for Senior Living, Dinner Clubs & Bars in Wisconsin</title>
+  <meta name="description" content="Piano, upright bass, and vocal duo performing for senior living communities, dinner clubs, fine venues, bars, and restaurants across Southeastern Wisconsin.">
 
   <!-- Favicon (bookmark/tab icon) -->
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- Fonts (FIXED: correct host is fonts.googleapis.com, not googleapis.com) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,9 +19,9 @@
   <style>
     /* CSS RESET & VARIABLES */
     :root {
-      --primary: #1e3a8a;       /* Deep Navy */
+      --primary: #1e3a8a;
       --primary-hover: #1e40af;
-      --accent: #d97706;        /* Warm Amber */
+      --accent: #d97706;
       --accent-hover: #b45309;
       --bg-light: #f8fafc;
       --bg-card: #ffffff;
@@ -537,239 +537,71 @@
         display: flex;
       }
     }
-  </style>
+  
+    .card .btn { margin-top: 18px; }
+    .venue-icon { font-size: 2.5rem; margin-bottom: 16px; }
+</style>
 </head>
 <body>
-
   <!-- HEADER / NAV -->
   <header>
     <div class="container nav-wrapper">
-      <a href="#" class="logo">Jim & Rob <span>Acoustic Duo</span></a>
+      <a href="index.html" class="logo">Jim & Rob <span>Acoustic Duo</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#why-us">Why Facilities Choose Us</a></li>
-        <li><a href="#music">Music & Videos</a></li>
-        <li><a href="#photos">Photos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#book" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem; margin-left: 10px;">Book Now</a></li>
+        <li><a href="senior-living.html">Senior Living</a></li>        <li><a href="upscale.html">Dinner Clubs</a></li>        <li><a href="bars.html">Bars &amp; Restaurants</a></li>
       </ul>
     </div>
   </header>
-
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-content">
       <span class="badge">Southeastern Wisconsin</span>
-      <h1>Live Acoustic Music Tailored for Senior Living Communities</h1>
-      <p>An interactive, uplifting blend of piano, upright bass, and timeless vocals that brings joy and sparks cherished memories for your residents.</p>
-      <div class="hero-buttons">
-        <a href="#book" class="btn btn-primary">Check Available Dates</a>
-        <a href="#music" class="btn btn-secondary">Watch Video Performance</a>
-      </div>
+      <h1>Jim &amp; Rob Acoustic Duo</h1>
+      <p>Piano, upright bass, and vocals &mdash; one duo, three different rooms. Choose where you'd like to see us play.</p>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section id="why-us" class="features">
+  <!-- VENUE SELECTOR -->
+  <section class="features">
     <div class="container">
       <div class="section-title">
-        <h2>Uplifting Entertainment for Seniors</h2>
-        <p>Professional, reliable, and deeply engaged musicians who understand how to connect with your community.</p>
+        <h2>Where Would You Like to See Us Play?</h2>
+        <p>Each venue gets its own setlist, energy, and volume. Click yours to learn more.</p>
       </div>
       <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">🎹</div>
-          <h3>Timeless Classics</h3>
-          <p>We feature a carefully curated setlist of recognizable jazz standards, oldies, classic pop, and holiday seasonal favorites.</p>
+        <div class="card" style="text-align: center;">
+          <div class="venue-icon">🏡</div>
+          <h3>Senior Living Communities</h3>
+          <p>Warm, interactive performances crafted for independent living, assisted living, and memory care residents &mdash; familiar songs, gentle volume, and plenty of sing-alongs.</p>
+          <a href="senior-living.html" class="btn btn-primary">Senior Living Page</a>
         </div>
-        <div class="card">
-          <div class="card-icon">🧠</div>
-          <h3>Memory Care Friendly</h3>
-          <p>Warm, dynamic interaction designed to safely stimulate mental acuity and invite residents to sing along, clap, or dance.</p>
+        <div class="card" style="text-align: center;">
+          <div class="venue-icon">🍸</div>
+          <h3>Dinner Clubs &amp; Fine Venues</h3>
+          <p>Sophisticated jazz standards and timeless classics at conversation-friendly volume &mdash; the perfect ambiance for upscale dining, wine bars, and private events.</p>
+          <a href="upscale.html" class="btn btn-primary">Dinner Club Page</a>
         </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Highly Professional</h3>
-          <p>Punctual arrival, minimal stage footprint, and total volume management tailored to specific community room dimensions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MUSIC & VIDEOS -->
-  <section id="music" class="media-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Music & Videos</h2>
-        <p>Listen to Jim & Rob live in action and check out our performance rotation list.</p>
-      </div>
-
-      <div class="media-grid">
-        <!-- Video embed: WBvkoUgcaDE (Jim & Rob live performance) -->
-        <div class="video-wrapper">
-          <iframe
-            id="ytVideo"
-            src="https://www.youtube.com/embed/WBvkoUgcaDE"
-            title="Jim & Rob Acoustic Duo Live"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <p style="margin-top: 12px;">
-          <a href="https://www.youtube.com/watch?v=WBvkoUgcaDE" target="_blank" rel="noopener"
-             style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem;">
-            ▶ Watch on YouTube
-          </a>
-        </p>
-        <!-- Repertoire ("more info") -->
-        <div>
-          <h3 style="color: var(--primary); margin-bottom: 16px;">What We Play</h3>
-          <ul class="repertoire-list">
-            <li><strong>We Can Work It Out</strong> <span class="tag">The Beatles</span></li>
-            <li><strong>16 Tons</strong> <span class="tag">Tennessee Ernie Ford</span></li>
-            <li><strong>Good Old Boys</strong> <span class="tag">Waylon Jennings</span></li>
-            <li><strong>Folsom Prison</strong> <span class="tag">Johnny Cash</span></li>
-            <li><strong>Sweet Caroline</strong> <span class="tag">Neil Diamond</span></li>
-          </ul>
-          <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.95rem;">
-            …plus many more. Resident requests are always welcome — send us a list and we'll work your favorites into the set.
-          </p>
+        <div class="card" style="text-align: center;">
+          <div class="venue-icon">🍻</div>
+          <h3>Bars &amp; Restaurants</h3>
+          <p>High-energy acoustic covers, crowd-pleasing requests, and sing-along favorites for happy hours, Friday nights, patios, and special events.</p>
+          <a href="bars.html" class="btn btn-primary">Bars &amp; Restaurants Page</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- PHOTO GALLERY -->
-  <section id="photos" class="features">
-    <div class="container">
-      <div class="section-title">
-        <h2>Jim &amp; Rob in Action</h2>
-        <p>Live performances across Southeastern Wisconsin.</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="gallery-1.jpg" alt="Jim and Rob posing with the upright bass at a venue"></div>
-        <div class="gallery-item"><img src="gallery-2.jpg" alt="Jim and Rob performing indoors — upright bass and keyboard"></div>
-        <div class="gallery-item"><img src="gallery-3.jpg" alt="Rob playing the upright bass"></div>
-        <div class="gallery-item"><img src="gallery-4.jpg" alt="Jim singing and playing keyboard at an outdoor show"></div>
-      </div>
-      <div style="text-align: center; margin-top: 32px;">
-        <a href="https://www.facebook.com/jimandrobacoustic" target="_blank" rel="noopener" class="btn btn-facebook">Follow us on Facebook</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIGHTBOX OVERLAY -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer">
-    <button class="lightbox-btn lightbox-close" id="lbClose" aria-label="Close">&times;</button>
-    <button class="lightbox-btn lightbox-prev" id="lbPrev" aria-label="Previous photo">&#10094;</button>
-    <img id="lbImg" src="" alt="Enlarged photo">
-    <button class="lightbox-btn lightbox-next" id="lbNext" aria-label="Next photo">&#10095;</button>
-  </div>
-
-  <!-- BOOKING FORM -->
-  <section id="book" class="booking-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Book Jim & Rob</h2>
-        <p>Tell us about your community and we'll get back to you with availability.</p>
-      </div>
-      <div class="booking-container">
-        <!-- Booking form submissions are sent via Formspree to your email inbox -->
-        <form action="https://formspree.io/f/xnpngylq" method="POST">
-          <input type="hidden" name="_subject" value="New booking request — Jim & Rob Acoustic Duo">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="facility">Facility / Community Name</label>
-            <input type="text" id="facility" name="facility">
-          </div>
-          <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" name="date">
-          </div>
-          <div class="form-group">
-            <label for="message">Tell Us About Your Event</label>
-            <textarea id="message" name="message" rows="5" placeholder="Number of residents, room size, occasion, favorite songs..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Request Availability</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ (interactive accordion) -->
-  <section id="faq" class="faq-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
-        <p>Click a question below to see the answer.</p>
-      </div>
-      <div class="faq-container">
-
-        <details class="faq-item">
-          <summary>What areas do you serve?</summary>
-          <div class="faq-answer">
-            <p>We perform across Southeastern Wisconsin, including Milwaukee, Waukesha, Ozaukee, Washington, and Racine counties. We're happy to travel farther for the right community — just ask!</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long is a typical performance?</summary>
-          <div class="faq-answer">
-            <p>Most communities book us for a 60–90 minute set. We can adjust the length to fit your activity schedule, and we're flexible about breaks for resident needs.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do you perform in memory care units?</summary>
-          <div class="faq-answer">
-            <p>Yes! We have extensive experience with memory care and dementia-friendly performances. We keep volumes gentle, choose highly familiar songs, and invite residents to sing along at their own pace.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What does your setup require?</summary>
-          <div class="faq-answer">
-            <p>Very little. We bring our own keyboard, upright bass, and compact sound system. All we need is a standard power outlet and roughly an 8' x 8' performance space. Setup takes about 20 minutes.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can residents request songs?</summary>
-          <div class="faq-answer">
-            <p>Absolutely — requests are our favorite part! Share a song list with us ahead of time and we'll work as many favorites as we can into the set.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How far in advance should we book?</summary>
-          <div class="faq-answer">
-            <p>We recommend booking 4–6 weeks ahead, especially for holiday seasons. That said, reach out anytime — we'll do our best to accommodate last-minute dates.</p>
-          </div>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p><strong style="color:#ffffff;">Jim & Rob Acoustic Duo</strong> · Live senior living entertainment in Southeastern Wisconsin</p>
-      <p style="margin-top: 8px;">Questions? <a href="#book">Book a performance</a> or <a href="#faq">read our FAQ</a>.</p>
+      <p><strong style="color:#ffffff;">Jim &amp; Rob Acoustic Duo</strong> &middot; One duo. Every kind of room.</p>
       <p style="margin-top: 18px;">
         <a href="https://www.facebook.com/jimandrobacoustic" target="_blank" rel="noopener" class="btn btn-facebook">Find us on Facebook</a>
       </p>
-      <p style="margin-top: 12px; font-size: 0.8rem;">&copy; 2026 Jim & Rob Acoustic Duo. All rights reserved.</p>
+      
+      <p style="margin-top: 12px; font-size: 0.8rem;">&copy; 2026 Jim &amp; Rob Acoustic Duo. All rights reserved.</p>
     </div>
   </footer>
-
   <script>
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -781,53 +613,6 @@
       menuToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
     });
 
-    // FAQ fallback: if <details> native toggling is unavailable, do it manually
-    if (!('open' in document.createElement('details'))) {
-      document.querySelectorAll('.faq-item').forEach(item => {
-        const summary = item.querySelector('summary');
-        const answer = item.querySelector('.faq-answer');
-        item.open = false;
-        answer.style.display = 'none';
-        summary.addEventListener('click', e => {
-          e.preventDefault();
-          const isOpen = item.open;
-          item.open = !isOpen;
-          answer.style.display = isOpen ? 'none' : 'block';
-        });
-      });
-    }
-
-    // Photo lightbox: click a gallery image to enlarge, arrows to navigate
-    const galleryImgs = Array.from(document.querySelectorAll('.gallery-item img'));
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    let lbIndex = 0;
-
-    function openLightbox(i) {
-      lbIndex = i;
-      lbImg.src = galleryImgs[lbIndex].src;
-      lbImg.alt = galleryImgs[lbIndex].alt;
-      lightbox.classList.add('open');
-    }
-
-    function stepLightbox(dir) {
-      lbIndex = (lbIndex + dir + galleryImgs.length) % galleryImgs.length;
-      lbImg.src = galleryImgs[lbIndex].src;
-      lbImg.alt = galleryImgs[lbIndex].alt;
-    }
-
-    galleryImgs.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
-    document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
-    document.getElementById('lbPrev').addEventListener('click', () => stepLightbox(-1));
-    document.getElementById('lbNext').addEventListener('click', () => stepLightbox(1));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') lightbox.classList.remove('open');
-      if (e.key === 'ArrowLeft') stepLightbox(-1);
-      if (e.key === 'ArrowRight') stepLightbox(1);
-    });
-
     // Close the mobile menu after tapping a link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
@@ -837,6 +622,5 @@
       });
     });
   </script>
-
 </body>
 </html>
