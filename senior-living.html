@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jim & Rob Acoustic Duo | Live Senior Living Entertainment in Wisconsin</title>
+  <meta name="description" content="Warm, interactive acoustic piano, upright bass, and vocal performances for senior living, independent living, and memory care communities across Southeastern Wisconsin.">
+
+  <!-- Favicon (bookmark/tab icon) -->
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS RESET & VARIABLES */
+    :root {
+      --primary: #1e3a8a;
+      --primary-hover: #1e40af;
+      --accent: #d97706;
+      --accent-hover: #b45309;
+      --bg-light: #f8fafc;
+      --bg-card: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --border-color: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    /* CONTAINER & UTILITIES */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: #dbeafe;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    /* NAVIGATION */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* FEATURES / VALUE PROPOSITION */
+    .features {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* MEDIA & REPERTOIRE SECTION */
+    .media-section {
+      background-color: #ffffff;
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      background-color: #0f172a;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .repertoire-list {
+      list-style: none;
+    }
+
+    .repertoire-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .repertoire-list li strong {
+      color: var(--primary);
+    }
+
+    .repertoire-list .tag {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    /* BOOKING & CONTACT FORM */
+    .booking-section {
+      padding: 80px 0;
+    }
+
+    .booking-container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--text-dark);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+      border-color: var(--primary);
+    }
+
+    /* FAQ SECTION — accordion using native <details> (no JavaScript needed) */
+    .faq-section {
+      background-color: #ffffff;
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      list-style: none;
+      transition: background-color 0.2s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--accent);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item summary:hover {
+      background-color: var(--bg-light);
+    }
+
+    .faq-item .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: zoom-in;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.92);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 88%;
+      max-height: 78vh;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: none;
+      font-size: 1.8rem;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .lightbox-close { top: 22px; right: 22px; }
+    .lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+    .lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
+
+    /* FACEBOOK BUTTON */
+    .btn-facebook {
+      background-color: #1877F2;
+      color: #ffffff;
+    }
+
+    .btn-facebook:hover {
+      background-color: #1467d6;
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .media-grid { grid-template-columns: 1fr; }
+
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #ffffff;
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+        gap: 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+  
+    .card .btn { margin-top: 18px; }
+    .venue-icon { font-size: 2.5rem; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Jim & Rob <span>Acoustic Duo</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#why-us">Why Facilities Choose Us</a></li>
+        <li><a href="#music">Music & Videos</a></li>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#book" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem; margin-left: 10px;">Book Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="badge">Southeastern Wisconsin</span>
+      <h1>Live Acoustic Music Tailored for Senior Living Communities</h1>
+      <p>An interactive, uplifting blend of piano, upright bass, and timeless vocals that brings joy and sparks cherished memories for your residents.</p>
+      <div class="hero-buttons">
+        <a href="#book" class="btn btn-primary">Check Available Dates</a>
+        <a href="#music" class="btn btn-secondary">Watch Video Performance</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="why-us" class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Uplifting Entertainment for Seniors</h2>
+        <p>Professional, reliable, and deeply engaged musicians who understand how to connect with your community.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🎹</div>
+          <h3>Timeless Classics</h3>
+          <p>We feature a carefully curated setlist of recognizable jazz standards, oldies, classic pop, and holiday seasonal favorites.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Memory Care Friendly</h3>
+          <p>Warm, dynamic interaction designed to safely stimulate mental acuity and invite residents to sing along, clap, or dance.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Highly Professional</h3>
+          <p>Punctual arrival, minimal stage footprint, and total volume management tailored to specific community room dimensions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC & VIDEOS -->
+  <section id="music" class="media-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Music & Videos</h2>
+        <p>Listen to Jim & Rob live in action and check out our performance rotation list.</p>
+      </div>
+
+      <div class="media-grid">
+        <!-- Video embed: WBvkoUgcaDE (Jim & Rob live performance) -->
+        <div class="video-wrapper">
+          <iframe
+            id="ytVideo"
+            src="https://www.youtube.com/embed/WBvkoUgcaDE"
+            title="Jim & Rob Acoustic Duo Live"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p style="margin-top: 12px;">
+          <a href="https://www.youtube.com/watch?v=WBvkoUgcaDE" target="_blank" rel="noopener"
+             style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem;">
+            ▶ Watch on YouTube
+          </a>
+        </p>
+        <!-- Repertoire ("more info") -->
+        <div>
+          <h3 style="color: var(--primary); margin-bottom: 16px;">What We Play</h3>
+          <ul class="repertoire-list">
+            <li><strong>We Can Work It Out</strong> <span class="tag">The Beatles</span></li>
+            <li><strong>16 Tons</strong> <span class="tag">Tennessee Ernie Ford</span></li>
+            <li><strong>Good Old Boys</strong> <span class="tag">Waylon Jennings</span></li>
+            <li><strong>Folsom Prison</strong> <span class="tag">Johnny Cash</span></li>
+            <li><strong>Sweet Caroline</strong> <span class="tag">Neil Diamond</span></li>
+          </ul>
+          <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.95rem;">
+            …plus many more. Resident requests are always welcome — send us a list and we'll work your favorites into the set.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="photos" class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Jim &amp; Rob in Action</h2>
+        <p>Live performances across Southeastern Wisconsin.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="gallery-1.jpg" alt="Jim and Rob posing with the upright bass at a venue"></div>
+        <div class="gallery-item"><img src="gallery-2.jpg" alt="Jim and Rob performing indoors — upright bass and keyboard"></div>
+        <div class="gallery-item"><img src="gallery-3.jpg" alt="Rob playing the upright bass"></div>
+        <div class="gallery-item"><img src="gallery-4.jpg" alt="Jim singing and playing keyboard at an outdoor show"></div>
+      </div>
+      <div style="text-align: center; margin-top: 32px;">
+        <a href="https://www.facebook.com/jimandrobacoustic" target="_blank" rel="noopener" class="btn btn-facebook">Follow us on Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer">
+    <button class="lightbox-btn lightbox-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lightbox-btn lightbox-prev" id="lbPrev" aria-label="Previous photo">&#10094;</button>
+    <img id="lbImg" src="" alt="Enlarged photo">
+    <button class="lightbox-btn lightbox-next" id="lbNext" aria-label="Next photo">&#10095;</button>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <section id="book" class="booking-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Book Jim & Rob</h2>
+        <p>Tell us about your community and we'll get back to you with availability.</p>
+      </div>
+      <div class="booking-container">
+        <!-- Booking form submissions are sent via Formspree to your email inbox -->
+        <form action="https://formspree.io/f/xnpngylq" method="POST">
+          <input type="hidden" name="_subject" value="New booking request — Jim & Rob Acoustic Duo">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="facility">Facility / Community Name</label>
+            <input type="text" id="facility" name="facility">
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date">
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Event</label>
+            <textarea id="message" name="message" rows="5" placeholder="Number of residents, room size, occasion, favorite songs..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Request Availability</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (interactive accordion) -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Click a question below to see the answer.</p>
+      </div>
+      <div class="faq-container">
+
+        <details class="faq-item">
+          <summary>What areas do you serve?</summary>
+          <div class="faq-answer">
+            <p>We perform across Southeastern Wisconsin, including Milwaukee, Waukesha, Ozaukee, Washington, and Racine counties. We're happy to travel farther for the right community — just ask!</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long is a typical performance?</summary>
+          <div class="faq-answer">
+            <p>Most communities book us for a 60–90 minute set. We can adjust the length to fit your activity schedule, and we're flexible about breaks for resident needs.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you perform in memory care units?</summary>
+          <div class="faq-answer">
+            <p>Yes! We have extensive experience with memory care and dementia-friendly performances. We keep volumes gentle, choose highly familiar songs, and invite residents to sing along at their own pace.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does your setup require?</summary>
+          <div class="faq-answer">
+            <p>Very little. We bring our own keyboard, upright bass, and compact sound system. All we need is a standard power outlet and roughly an 8' x 8' performance space. Setup takes about 20 minutes.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can residents request songs?</summary>
+          <div class="faq-answer">
+            <p>Absolutely — requests are our favorite part! Share a song list with us ahead of time and we'll work as many favorites as we can into the set.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How far in advance should we book?</summary>
+          <div class="faq-answer">
+            <p>We recommend booking 4–6 weeks ahead, especially for holiday seasons. That said, reach out anytime — we'll do our best to accommodate last-minute dates.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p><strong style="color:#ffffff;">Jim & Rob Acoustic Duo</strong> · Live senior living entertainment in Southeastern Wisconsin</p>
+      <p style="margin-top: 8px;">Questions? <a href="#book">Book a performance</a> or <a href="#faq">read our FAQ</a>.</p>
+      <p style="margin-top: 18px;">
+        <a href="https://www.facebook.com/jimandrobacoustic" target="_blank" rel="noopener" class="btn btn-facebook">Find us on Facebook</a>
+      </p>
+      <p style="margin-top: 10px; font-size: 0.85rem;">One duo, every room: <a href="upscale.html">Dinner Clubs &amp; Fine Venues</a> &middot; <a href="bars.html">Bars &amp; Restaurants</a></p>
+      <p style="margin-top: 12px; font-size: 0.8rem;">&copy; 2026 Jim & Rob Acoustic Duo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
+    });
+
+    // FAQ fallback: if <details> native toggling is unavailable, do it manually
+    if (!('open' in document.createElement('details'))) {
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const summary = item.querySelector('summary');
+        const answer = item.querySelector('.faq-answer');
+        item.open = false;
+        answer.style.display = 'none';
+        summary.addEventListener('click', e => {
+          e.preventDefault();
+          const isOpen = item.open;
+          item.open = !isOpen;
+          answer.style.display = isOpen ? 'none' : 'block';
+        });
+      });
+    }
+
+    // Photo lightbox: click a gallery image to enlarge, arrows to navigate
+    const galleryImgs = Array.from(document.querySelectorAll('.gallery-item img'));
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    let lbIndex = 0;
+
+    function openLightbox(i) {
+      lbIndex = i;
+      lbImg.src = galleryImgs[lbIndex].src;
+      lbImg.alt = galleryImgs[lbIndex].alt;
+      lightbox.classList.add('open');
+    }
+
+    function stepLightbox(dir) {
+      lbIndex = (lbIndex + dir + galleryImgs.length) % galleryImgs.length;
+      lbImg.src = galleryImgs[lbIndex].src;
+      lbImg.alt = galleryImgs[lbIndex].alt;
+    }
+
+    galleryImgs.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
+    document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
+    document.getElementById('lbPrev').addEventListener('click', () => stepLightbox(-1));
+    document.getElementById('lbNext').addEventListener('click', () => stepLightbox(1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+      if (e.key === 'ArrowRight') stepLightbox(1);
+    });
+
+    // Close the mobile menu after tapping a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '&#9776;';
+      });
+    });
+  </script>
+
+
+</body>
+</html>
