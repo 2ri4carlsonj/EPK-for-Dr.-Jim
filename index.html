@@ -405,7 +405,21 @@
         gap: 18px;
         align-items: flex-start;
       }
-      .nav-links.open { display: flex; }
+      .video-shell { position: relative; background: #1a1a1d; }
+    .video-fallback {
+      position: absolute; inset: 0;
+      display: none; place-items: center;
+      background: rgba(18,18,20,0.92);
+      color: var(--muted); font-size: 0.85rem; font-weight: 700;
+      text-align: center; padding: 20px;
+      border: 1px dashed var(--border);
+    }
+    .video-fallback.show { display: grid; }
+    .ph img { display: block; }
+    .ph img.broken { display: none; }
+    .ph .img-fallback { display:none; min-height: 200px; place-items:center; background: rgba(255,255,255,0.04); border:1px dashed var(--border); color:var(--muted); font-size:0.8rem; padding:20px; text-align:center; }
+    .ph .img-fallback.show { display:grid; }
+    .nav-links.open { display: flex; }
     }
   </style>
 </head>
@@ -459,20 +473,26 @@
       <div class="media-videos">
         <div class="video-card">
           <div class="video-shell">
-            <video controls playsinline preload="metadata" poster="promo-poster.jpg">
+            <video id="vid30" controls playsinline preload="metadata" poster="promo-poster.jpg">
               <source src="promo.mp4" type="video/mp4">
+              <source src="promo-30.mp4" type="video/mp4">
+              <source src="promo30.mp4" type="video/mp4">
               Your browser doesn't support the video tag.
             </video>
+            <div class="video-fallback" id="fallback30">30s pitch video — upload <code>promo.mp4</code> to show it here</div>
           </div>
           <h4 class="bebas">THE 30-SECOND <span class="grad">PITCH</span></h4>
           <p>Classic rock meets modern country &mdash; meet the duo in half a minute.</p>
         </div>
         <div class="video-card">
           <div class="video-shell">
-            <video controls playsinline preload="metadata" poster="promo45-poster.jpg">
+            <video id="vid45" controls playsinline preload="metadata" poster="promo-45-poster.jpg">
               <source src="promo-45.mp4" type="video/mp4">
+              <source src="promo45.mp4" type="video/mp4">
+              <source src="promo-45s.mp4" type="video/mp4">
               Your browser doesn't support the video tag.
             </video>
+            <div class="video-fallback" id="fallback45">45s cut — upload <code>promo-45.mp4</code> to show it here</div>
           </div>
           <h4 class="bebas">THE 45-SECOND <span class="grad">CUT</span></h4>
           <p>The longer look &mdash; bars, patios, packed rooms, and sing-alongs.</p>
@@ -593,6 +613,58 @@
         menuToggle.innerHTML = '&#9776;';
       });
     });
+
+    // ---- Media missing-file helpers ----
+    function handleVideo(id, fallbackId) {
+      const v = document.getElementById(id);
+      const fb = document.getElementById(fallbackId);
+      if (!v) return;
+      let hasSource = false;
+      v.addEventListener('loadedmetadata', () => { hasSource = true; fb.classList.remove('show'); });
+      v.addEventListener('error', () => {
+        if (!hasSource) fb.classList.add('show');
+      });
+      // Check after 1.5s if still no metadata
+      setTimeout(() => {
+        if (v.readyState === 0) fb.classList.add('show');
+      }, 1500);
+      // Poster fallback - try alternative names
+      v.addEventListener('error', () => {
+        if (v.poster && v.poster.includes('promo45')) {
+          // try with dash
+          const alt = v.poster.replace('promo45', 'promo-45');
+          if (alt !== v.poster) { v.poster = alt; }
+        }
+      });
+    }
+    handleVideo('vid30', 'fallback30');
+    handleVideo('vid45', 'fallback45');
+
+    // Image fallbacks
+    document.querySelectorAll('.ph').forEach(ph => {
+      const img = ph.querySelector('img');
+      if (!img) return;
+      const fb = document.createElement('div');
+      fb.className = 'img-fallback';
+      fb.innerHTML = 'Missing: <code>' + img.getAttribute('src') + '</code><br>Upload it to this folder';
+      ph.appendChild(fb);
+      img.addEventListener('error', () => {
+        img.classList.add('broken');
+        fb.classList.add('show');
+        console.warn('Missing image:', img.src);
+      });
+    });
+    
+    // Hero fallback
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      const testImg = new Image();
+      testImg.src = 'hero.jpg';
+      testImg.onerror = () => {
+        hero.style.background = 'linear-gradient(180deg, #1a1a1d, #0a0a0b)';
+        console.warn('Missing hero.jpg');
+      };
+    }
   </script>
 
 </body>
